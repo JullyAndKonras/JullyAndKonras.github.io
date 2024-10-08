@@ -60,9 +60,6 @@ nav ul li a:hover {
     color: #fff;
 }
 
-#menu-icon {
-    display: none;
-}
 
 
 /* END NAVIGATION */
@@ -111,7 +108,9 @@ section h2 {
 }
 
 /* END FOOTER SECTION */
-
+#menu-icon {
+    display: none;
+}
 /* MEDIA QUERIES/RESPONSIVE */
 @media only screen and (max-width: 768px) {
     .wrapper {
