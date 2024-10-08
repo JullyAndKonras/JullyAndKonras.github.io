@@ -8,13 +8,13 @@ body {
 
 }
 
-*{
+* {
     transition: .4s;
 }
 
-canvas{
+canvas {
     z-index: -1;
-    position:fixed;
+    position: fixed;
 }
 
 .wrapper {
@@ -31,8 +31,8 @@ canvas{
 
 header h1 {
     /* float: left; */
-    font-size: 160%; 
-    display: inline-block;     
+    font-size: 160%;
+    display: inline-block;
 }
 
 /* END HEADER SECTION */
@@ -53,7 +53,7 @@ nav ul li a {
     text-decoration: none;
     font-size: 130%;
     font-weight: 600;
-    color: #d1d1d1;  
+    color: #d1d1d1;
 }
 
 nav ul li a:hover {
@@ -79,7 +79,7 @@ section div.container img {
 }
 
 section div.container img:hover {
-   opacity: 0.65; 
+    opacity: 0.65;
 }
 
 section {
@@ -104,6 +104,7 @@ section h2 {
 .footer p {
     font-weight: 700;
 }
+
 /* END FOOTER SECTION */
 
 /* MEDIA QUERIES/RESPONSIVE */
@@ -111,19 +112,21 @@ section h2 {
     .wrapper {
         width: 100%;
     }
-    
+
     header h1 {
         margin-left: 3%;
     }
+
     #menu-icon {
         width: 30px;
         height: 26px;
-        background: url(icons8-kuromi-50.png) no-repeat center;
         position: absolute;
         top: 2%;
         right: 5%;
         z-index: 100;
+        display: block;
     }
+
     nav ul {
         display: none;
         position: absolute;
@@ -135,21 +138,22 @@ section h2 {
         text-align: center;
         z-index: 10;
     }
+
     nav ul li {
         width: 90%;
         padding: 5%;
         margin: auto;
     }
+
     nav ul li a {
         padding: 5% 20%;
     }
+
     nav ul li a:hover {
         border-bottom: 1px solid #e1e1e1;
     }
 
-    nav:hover ul {
-        display: block;
-    }
+
     section div.container img {
         display: block;
         float: none;
@@ -158,41 +162,67 @@ section h2 {
     }
 }
 
-@media only screen and (min-width: 768px) and
-(max-width: 1024px) {
+#links {
+    flex-direction: column;
+    z-index: 100;
+    background-color: #d1d1d1;
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    padding: 3% 7%;
+    gap: 20px;
+    display: none;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
     .wrapper {
         width: 100%;
     }
+
     header h1 {
-        margin-left: 3%; 
+        margin-left: 3%;
     }
+
     nav {
         margin-right: 3%;
     }
 }
 
-/* Scroll to Top */
-/* https://www.w3schools.com/howto/howto_js_scroll_to_top.asp */
+
 #myBtn {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed/sticky position */
-    bottom: 10px; /* Place the button at the bottom of the page */
-    right: 30px; /* Place the button 30px from the right */
-    z-index: 99; /* Make sure it does not overlap */
-    border: none; /* Remove borders */
-    outline: none; /* Remove outline */
-    background-color: inherit; /* Set a background color */
-    color: inherit; /* Text color */
-    cursor: pointer; /* Add a mouse pointer on hover */
-    padding: 3px 5px; /* Some padding */
-    border-radius: 10px; /* Rounded corners */
-    font-size: 14px; /* Increase font size */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed/sticky position */
+    bottom: 10px;
+    /* Place the button at the bottom of the page */
+    right: 30px;
+    /* Place the button 30px from the right */
+    z-index: 99;
+    /* Make sure it does not overlap */
+    border: none;
+    /* Remove borders */
+    outline: none;
+    /* Remove outline */
+    background-color: inherit;
+    /* Set a background color */
+    color: inherit;
+    /* Text color */
+    cursor: pointer;
+    /* Add a mouse pointer on hover */
+    padding: 3px 5px;
+    /* Some padding */
+    border-radius: 10px;
+    /* Rounded corners */
+    font-size: 14px;
+    /* Increase font size */
 }
 
 #myBtn:hover {
-    background-color: #555; /* Add a dark-grey background on hover */
+    background-color: #555;
+    /* Add a dark-grey background on hover */
 }
 
-span{
-    color:	#a587ff;
+span {
+    color: #a587ff;
 }
