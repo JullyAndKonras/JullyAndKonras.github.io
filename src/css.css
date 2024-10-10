@@ -250,6 +250,7 @@ img {
 
 .flip-card:hover{
   transform: rotateY(180deg);
+  perspective: 1000px;
 }
 #footer {
     background-color: #303030;
