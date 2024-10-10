@@ -248,6 +248,9 @@ img {
     padding: 10px;
 }
 
+.flip-card:hover{
+  transform: rotateY(180deg);
+}
 #footer {
     background-color: #303030;
     padding: 15px;
