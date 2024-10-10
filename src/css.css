@@ -248,6 +248,10 @@ img {
     padding: 10px;
 }
 
+.flip-card{
+  perspective: 1000px;
+}
+
 .flip-card:hover{
   transform: rotateY(180deg);
   perspective: 1000px;
