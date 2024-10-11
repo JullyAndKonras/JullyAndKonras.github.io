@@ -4,7 +4,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
+    transition: .7s;
     -webkit-user-select: none;
     /* Safari */
     -ms-user-select: none;
@@ -186,7 +186,7 @@ hr {
 }
 
 #stuff-box {
-    height: 35%;
+    height: 45%;
     background-color: #303030;
 }
 
@@ -248,16 +248,32 @@ img {
     padding: 10px;
 }
 
-.stuff-box{
-  perspective: 1000px;
-}
 
-.stuff-box:hover{
-  transform: rotateY(180deg);
-  perspective: 1000px;
-}
 #footer {
     background-color: #303030;
     padding: 15px;
     text-align: center;
+}
+
+.flip-card{
+    
+}
+
+.mess{
+    position: absolute;
+    height: 100%;
+    width: 90%;
+    top: 30%;
+    left: 15%;
+    z-index: -100;
+}
+
+@keyframes flip-ani {
+    from   {transform: rotateY(180deg);}
+    to  {background-color: #202020;}
+}
+
+.flip{
+    animation-name: flip-ani;
+    animation-duration: 2s;
 }
