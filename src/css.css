@@ -54,9 +54,16 @@ Colors
 */
 
 body {
-    background-color: #141414;
     color: #e3e3e3;
     font-family: "Kode Mono", monospace;
+    background-color: #101010;
+}
+
+#cnv {
+    z-index: -100;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 #container {
@@ -255,11 +262,8 @@ img {
     text-align: center;
 }
 
-.flip-card{
-    
-}
 
-.mess{
+.mess {
     position: absolute;
     height: 100%;
     width: 90%;
@@ -269,11 +273,16 @@ img {
 }
 
 @keyframes flip-ani {
-    from   {transform: rotateY(180deg);}
-    to  {background-color: #202020;}
+    from {
+        transform: rotateY(180deg);
+    }
+
+    to {
+        background-color: #202020;
+    }
 }
 
-.flip{
+.flip {
     animation-name: flip-ani;
     animation-duration: 2s;
 }
