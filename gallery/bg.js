@@ -17,7 +17,7 @@ function animate() {
   //Random position and size of stars;
   let x = W * Math.random();
   let y = H * Math.random();
-  let r = 2.5 * Math.random();
+  let r = 2 * Math.random();
 
   //Draw the stars;
   ctx.beginPath();
