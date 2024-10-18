@@ -25,3 +25,21 @@ flip.addEventListener("click", function flipIt() {
     flip.classList.add("flip")
     flip.src = ""
 })
+
+window.alert("Ukryta misja! Znajdz nieprawdziwe informacje na stronie, kliknij je i odkryj hasło. (Hasło przekazane Konraś do godziny 12am dnia 18.10.24 gwarantuje nagrode!).\nPowodzenia Użytkowniu!")
+
+var event1 = document.getElementById("event1");
+event1.addEventListener("click", function event1() {
+    window.open("event1.html")
+})
+
+var event2 = document.getElementById("event2");
+event2.addEventListener("click", function event1() {
+    window.open("event2.html")
+})
+
+var event3 = document.getElementById("event3");
+event3.addEventListener("click", function event1() {
+    window.open("event3.html")
+})
+
