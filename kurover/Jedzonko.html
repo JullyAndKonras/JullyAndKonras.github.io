@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You Cutie!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      color: #e1e1e1;
+    }
+
+    @keyframes float {
+      0% {
+        filter: drop-shadow(0 0 0.55rem #b097dd);
+        transform: translatey(0px);
+      }
+
+      50% {
+        filter: drop-shadow(0 0 0.55rem #e1e1e1);
+        transform: translatey(-20px);
+      }
+
+      100% {
+        filter: drop-shadow(0 0 0.55rem #C5B4E3);
+        transform: translatey(0px);
+      }
+    }
+
+    #cnv {
+      position: absolute;
+      z-index: -7;
+      height: 150svh;
+    }
+
+    body {
+      /* background-color: #121212; */
+      font-family: "Exo", sans-serif;
+      overflow-y: visible;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 140svh;
+    }
+
+    .box {
+      min-width: 320px;
+      height: 100svh;
+      max-width: 520px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1%;
+    }
+
+    .box h2 {
+      text-align: center;
+
+    }
+
+    .box h1 {
+      text-align: center;
+    }
+
+    .box img {
+      animation: float 6s ease-in-out infinite;
+      height: 180px;
+      margin: 5%;
+      border-radius: 10px;
+    }
+
+    option,
+    select {
+      font-size: 1.5rem;
+    }
+
+    button {
+      color: #000;
+      font-size: 1.5rem;
+    }
+
+    p {
+      padding: 1% 5%;
+      text-align: justify;
+    }
+
+    span {
+      color: #b097dd
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="cnv"></canvas>
+  <div class="box">
+    <h1>Strona podczas budowy</h1>
+    <img src="hug.gif">
+    <a href="index.html">Powrót</a>
+  </div>
+</body>
+
+
+<script>//Get context and screen size;
+  var ctx = cnv.getContext("2d");
+  var W = window.innerWidth;
+  var H = window.innerHeight;
+
+  //Set Canvas and Background Color;
+  cnv.width = W;
+  cnv.height = H;
+  ctx.fillStyle = "#121212";
+  ctx.fillRect(0, 0, W, H);
+
+  //Glow effect;
+  ctx.shadowBlur = 20;
+  ctx.shadowColor = "#e3e3e3";
+
+  function animate() {
+    //Random position and size of stars;
+    let x = W * Math.random();
+    let y = H * Math.random();
+    let r = 2 * Math.random();
+
+    //Draw the stars;
+    ctx.beginPath();
+    ctx.fillStyle = "white";
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fill();
+
+    setTimeout(animate, 1200);
+  }
+  animate();
+</script>
+
+</html>

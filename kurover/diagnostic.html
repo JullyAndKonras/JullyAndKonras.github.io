@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You Cutie!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      color: #e1e1e1;
+      outline: none;
+    }
+
+    @keyframes float {
+      0% {
+        filter: drop-shadow(0 0 0.75rem purple);
+        transform: translatey(0px);
+      }
+
+      50% {
+        filter: drop-shadow(0 0 0.75rem violet);
+        transform: translatey(-20px);
+      }
+
+      100% {
+        filter: drop-shadow(0 0 0.75rem pink);
+        transform: translatey(0px);
+      }
+    }
+
+    #cnv {
+      position: absolute;
+      z-index: -7;
+    }
+
+    body {
+      /* background-color: #121212; */
+      font-family: "Exo", sans-serif;
+      overflow-x: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      width: 100svw;
+      height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 7%;
+    }
+
+    .box h2 {
+      text-align: center;
+
+    }
+
+    .box h1 {
+      text-align: center;
+    }
+
+    .box img {
+      animation: float 6s ease-in-out infinite;
+      height: 180px;
+    }
+
+    option,
+    select {
+      font-size: 1.5rem;
+      background: none;
+      padding: 10px;
+      border-radius: 15px;
+      color: #e1e1e1;
+
+    }
+
+    option {
+      background-color: #121221;
+    }
+
+
+    button {
+      font-size: 1.5rem;
+      background: none;
+      padding: 10px;
+      border-radius: 15px;
+
+    }
+
+    span {
+      color: #b097dd
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="cnv"></canvas>
+  <div class="box">
+    <h1>Jaki problem dolega mojej Kruszynce?</h1>
+    <img src="kuromi-460617.webp" alt="Kuromi-pix">
+    <h2>Wybierz myśl która męczy Jully i pozwól Kuromi przekazać pare słówek od Konraś.</h2>
+    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 20px;">
+      <select id="problems">
+        <option value="help">Po co tu jestem?</option>
+        <option value="Kochanie">Kto Kocha Jully?</option>
+        <option value="Jedzonko">Jedzonko</option>
+        <option value="Bezradność">Bezradność</option>
+        <option value="enought">Am I enought?</option>
+      </select>
+      <button onclick="porada()">Teleporada.</button>
+    </div>
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <p>Love You so Much! - Konraś.</p>
+      <p>Made with 💟 for my Wife Jully.</p>
+    </div>
+  </div>
+</body>
+
+
+<script>//Get context and screen size;
+  var ctx = cnv.getContext("2d");
+  var W = window.innerWidth;
+  var H = window.innerHeight;
+  var selector = document.getElementById("problems")
+
+  //Set Canvas and Background Color;
+  cnv.width = W;
+  cnv.height = H;
+  ctx.fillStyle = "#121212";
+  ctx.fillRect(0, 0, W, H);
+
+  //Glow effect;
+  ctx.shadowBlur = 20;
+  ctx.shadowColor = "#e3e3e3";
+
+  function animate() {
+    //Random position and size of stars;
+    let x = W * Math.random();
+    let y = H * Math.random();
+    let r = 2 * Math.random();
+
+    //Draw the stars;
+    ctx.beginPath();
+    ctx.fillStyle = "white";
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fill();
+
+    setTimeout(animate, 1200);
+  }
+  animate();
+
+  function porada() {
+    let problem = selector.value;
+    window.open(problem + ".html");
+
+  }
+</script>
+
+</html>

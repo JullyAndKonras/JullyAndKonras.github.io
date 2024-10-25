@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You Cutie!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      color: #e1e1e1;
+    }
+
+    @keyframes float {
+      0% {
+        filter: drop-shadow(0 0 0.55rem #b097dd);
+        transform: translatey(0px);
+      }
+
+      50% {
+        filter: drop-shadow(0 0 0.55rem #e1e1e1);
+        transform: translatey(-20px);
+      }
+
+      100% {
+        filter: drop-shadow(0 0 0.55rem #C5B4E3);
+        transform: translatey(0px);
+      }
+    }
+
+    #cnv {
+      position: absolute;
+      z-index: -7;
+    }
+
+    body {
+      /* background-color: #121212; */
+      font-family: "Exo", sans-serif;
+      overflow-x: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box {
+      min-width: 320px;
+      height: 100svh;
+      max-width: 520px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1%;
+    }
+
+    .box h2 {
+      text-align: center;
+
+    }
+
+    .box h1 {
+      text-align: center;
+    }
+
+    .box img {
+      animation: float 6s ease-in-out infinite;
+      height: 180px;
+      margin: 5%;
+      border-radius: 10px;
+    }
+
+    option,
+    select {
+      font-size: 1.5rem;
+    }
+
+    button {
+      color: #000;
+      font-size: 1.5rem;
+    }
+
+    p {
+      padding: 1% 5%;
+    }
+
+    span {
+      color: #b097dd
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="cnv"></canvas>
+  <div class="box">
+    <h1>Hi<span>y</span>a Kr<span>u</span>szynko!</h1>
+    <h2>Po co j<span>e</span>st ta str<span>o</span>nka?</h2>
+    <p>
+      Jeśli tu zawitałaś to najprawdo podobniej znowu męczą mi <span>cię</span> myśli, pewnie jest w twojej główce tak
+      wiele rzeczy
+      naraz że nie <span>jesteś</span> w stanie za nimi nadążyć. Pewnie Głowka wmawia <span>ci</span> naprawde złe
+      rzeczy które tak
+      naprawde <span>nie</span>
+      mają i nigdy <span>nie</span> będą miały odzwierciedlenia w rzeczywistości. Stworzyłem tą stronke właśnie by pomóc
+      <span>ci</span> z tego
+      typu problemami. Będziesz zawsze mogła spytać Konraś o rade, o jego zdanie odnośnie danego problemu nawet jeśli
+      nie będę wtedy przy <span>tobie</span>! Jak możesz zauważyć chcę się <span>tobą</span> zaopiekować nawet kiedy nie
+      ma mnie
+      obok.
+    </p>
+    <img src="kiss.gif" alt="">
+    <a href="index.html">Powrót</a>
+  </div>
+</body>
+
+
+<script>//Get context and screen size;
+  var ctx = cnv.getContext("2d");
+  var W = window.innerWidth;
+  var H = window.innerHeight;
+
+  //Set Canvas and Background Color;
+  cnv.width = W;
+  cnv.height = H;
+  ctx.fillStyle = "#121212";
+  ctx.fillRect(0, 0, W, H);
+
+  //Glow effect;
+  ctx.shadowBlur = 20;
+  ctx.shadowColor = "#e3e3e3";
+
+  function animate() {
+    //Random position and size of stars;
+    let x = W * Math.random();
+    let y = H * Math.random();
+    let r = 2 * Math.random();
+
+    //Draw the stars;
+    ctx.beginPath();
+    ctx.fillStyle = "white";
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fill();
+
+    setTimeout(animate, 1200);
+  }
+  animate();
+</script>
+
+</html>
