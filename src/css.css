@@ -183,7 +183,7 @@ hr {
 
 #audio-box {
     width: 100%;
-    height: 45%;
+    height: 46%;
     background-color: #303030;
     display: flex;
     flex-direction: column;
@@ -193,7 +193,7 @@ hr {
 }
 
 #stuff-box {
-    height: 45%;
+    height: 50%;
     background-color: #303030;
 }
 
@@ -290,4 +290,75 @@ img {
 .flip {
     animation-name: flip-ani;
     animation-duration: 2s;
+}
+
+.player{
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+
+.player audio{
+    width: 100%;
+}
+
+.studentka{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+}
+
+.studentka-links{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    font-size: 20px;
+}
+
+.gif-pix{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.wants{
+    width: 100%;
+}
+
+.wants ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+}
+
+.problems{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.problems table{
+    margin: 2%;
+}
+
+.Promise{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.Promise p{
+   text-align: center;
 }
