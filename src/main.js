@@ -1,9 +1,12 @@
 var audio = document.getElementById("bgMusic");
 audio.volume = 0.01;
-
+var audioImg = document.getElementById("audio-img");
 var love = document.getElementById("audio-img");
 var playerStatus = 0;
 var oldSrc = "src/bgMusic.mp3"
+var library = document.getElementById("library");
+var musicSelect = document.getElementById("music-select");
+var audioTitle = document.getElementById("audio-title");
 
 love.addEventListener("click", function click() {
     console.log("Kocham moją Mądrą Dziewczynke <3")
@@ -19,6 +22,15 @@ love.addEventListener("click", function click() {
     }
 })
 
+function changeMusic(music){
+    audio.src="src/"+music+".mp3"
+    audioImg.src="src/music-icons/"+music+".png"
+    oldSrc = "src/"+music+".mp3"
+    audioTitle.innerText = music
+    love.style.animationName = "spin"
+    playerStatus = 0;
+}
+
 
 var flip = document.getElementById("flip-card");
 flip.addEventListener("click", function flipIt() {
@@ -26,20 +38,10 @@ flip.addEventListener("click", function flipIt() {
     flip.src = ""
 })
 
-//window.alert("Ukryta misja! Znajdz nieprawdziwe informacje na stronie, kliknij je i odkryj hasło. (Hasło przekazane Konraś do godziny 12am dnia 18.10.24 gwarantuje nagrode!).\nPowodzenia Użytkowniu!")
+library.addEventListener("click", function showDisks() {
+    musicSelect.style.display = "flex"
+})
 
-// var event1 = document.getElementById("event1");
-// event1.addEventListener("click", function event1() {
-//     window.open("event1.html")
-// })
-
-// var event2 = document.getElementById("event2");
-// event2.addEventListener("click", function event1() {
-//     window.open("event2.html")
-// })
-
-// var event3 = document.getElementById("event3");
-// event3.addEventListener("click", function event1() {
-//     window.open("event3.html")
-// })
-
+musicSelect.addEventListener("click", function hideDisks() {
+    musicSelect.style.display = "none"
+})

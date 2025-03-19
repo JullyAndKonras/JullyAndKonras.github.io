@@ -12,6 +12,25 @@
 <body>
     <canvas id="cnv"></canvas>
     <div id="container">
+        <div class="music-select" id="music-select">
+            <div class="disk-box">
+                <img src="src/music-icons/bgMusic.png" onclick="changeMusic('bgMusic')">
+                <p>I'm so crazy for youuu.</p>
+            </div>
+            <div class="disk-box" onclick="changeMusic('spit')">
+                <img src="src/music-icons/spit.png">
+                <p>Spit im my face</p>
+            </div>
+            <div class="disk-box" onclick="changeMusic('vpx')">
+                <img src="src/music-icons/vpx.png">
+                <p>Very polish christmas</p>
+            </div>
+            <div class="disk-box" onclick="changeMusic('tte')">
+                <img src="src/music-icons/tte.png">
+                <p>Till the end</p>
+            </div>
+
+        </div>
         <div id="header">
             <div id="head-img">
                 <img id="profile-img" src="webp.webp" alt="profile">
@@ -226,9 +245,12 @@
                     <!-- <img class="flip-card" src="mi.gif" style="width: 100%;" alt="pix"> -->
                 </div>
                 <div id="audio-box">
+                    <div class="lib-box">
+                        <img id="library" src="src/book.png">
+                    </div>
                     <p>Now playing:</p>
-                    <img id="audio-img" src="src/disk.png">
-                    <p id="event2">I’m so crazy for youu ᐸ3</p>
+                    <img id="audio-img" src="src/music-icons/bgMusic.png">
+                    <p id="audio-title">I'm so crazy for youuu ᐸ3</p>
                     <audio id="bgMusic" autoplay loop>
                         <source src="src/bgMusic.mp3" type="audio/mpeg">
                     </audio>
