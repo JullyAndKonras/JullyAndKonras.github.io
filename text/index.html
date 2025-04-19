@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spoiler</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;700;900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="src/fontello-2ad1882c/css/fontello.css">
+    <link rel="stylesheet" href="src/icofont/icofont.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: #121212;
+            margin:0;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Exo 2', sans-serif;
+            width: 100vw;
+            height: 100vh;
+        }
+            canvas{
+            z-index: -1;
+            position:fixed;
+        }
+
+        #text{
+            width: 40%;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="cnv"></canvas>
+    <div id="text">
+        Lord stał na szczycie zimnego wzgórza, otulony mrokiem nocy, który zdawał się przenikać jego duszę. Z zewnątrz był nieprzenikniony, zimny i wyniosły — uważał się za najlepszego pod każdym względem, niedostępnego dla słabości i uczuć. Jednak jego serce kryło wewnętrzne marzenie: pragnął, by ktoś go docenił, zauważył jego wysiłki i walki, które toczył w samotności. Był bohaterem własnej mrocznej opowieści, walczącym z cieniem własnej duszy, który nieustannie poddawał go próbom i zmuszał do konfrontacji z samym sobą.
+
+Jego życie było ciągłą bitwą — z samym sobą, z własnymi demonami i światem, który zdawał się go ignorować. Nikt nie znał prawdziwego Lorda, ukrytego za maską lodowatego spokoju i wyniosłości. W głębi duszy był jednak cierpiącym męczennikiem, który pragnął miłości i akceptacji, choć nigdy nie potrafił tego okazać.
+
+Pewnej nocy, gdy mgła gęstniała nad doliną, na jego drodze pojawiła się Kobieta. Jej obecność była jak światło w ciemności — ciepła, delikatna, a zarazem pełna tajemnicy. Spojrzał na nią i poczuł coś, czego nigdy wcześniej nie doświadczył: serce zabiło mu mocniej, a lodowata skorupa zaczęła pękać. Dała mu coś, czego nigdy nie miał — poczucie bycia naprawdę widzianym i kochanym. To uczucie odmieniło go, sprawiło, że zaczął dostrzegać świat inaczej, a przede wszystkim siebie samego.
+
+Chciał dla niej stać się lepszym, walczył z własnymi słabościami, próbował zrzucić ciężar dumy i chłodu, które nosił przez całe życie. Wiedział, że jeśli ją straci, jego mroczne królestwo znów pogrąży się w samotności i beznadziei. Ta miłość była dla niego jak wybawienie i przekleństwo zarazem — dawała nadzieję, ale też ujawniała rany, które długo skrywał.
+
+W najczarniejszym momencie swojej samotności, gdy wydawało się, że nawet światło nadziei gaśnie, wypowiedział cicho do siebie imię, które nosił z dumą i ciężarem: „Konrad, The Griffin...” — lord, który pragnął być kimś więcej niż tylko cieniem własnej legendy. Jego walka o lepsze jutro była nie tylko zewnętrzną bitwą, lecz przede wszystkim dramatem duszy, która pragnęła miłości i uznania, a której nikt nigdy nie poznał naprawdę.
+    </div>
+</body>
+
+<script>
+    //Get context and screen size;
+var ctx = cnv.getContext("2d");
+var W = window.innerWidth;
+var H = window.innerHeight;
+
+//Set Canvas and Background Color;
+cnv.width = W;
+cnv.height = H;
+ctx.fillStyle = "#121212";
+ctx.fillRect(0, 0, W, H);
+
+//Glow effect;
+ctx.shadowBlur = 20;
+ctx.shadowColor = "#e3e3e3";
+
+function animate() {
+  //Random position and size of stars;
+  let x = W * Math.random();
+  let y = H * Math.random();
+  let r = 2.5 * Math.random();
+
+  //Draw the stars;
+  ctx.beginPath();
+  ctx.fillStyle = "white";
+  ctx.arc(x, y, r, 0, Math.PI * 2);
+  ctx.fill();
+
+  setTimeout(animate, 200);
+}
+animate();
+</script>
+</html>
